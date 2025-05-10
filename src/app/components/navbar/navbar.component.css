@@ -49,3 +49,10 @@
   font-weight: 600;
   color: #FFB703; /* Accent Yellow for brand */
 }
+
+.mat-toolbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
