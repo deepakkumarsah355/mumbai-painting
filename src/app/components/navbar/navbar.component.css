@@ -1,0 +1,51 @@
+.mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.desktop-menu {
+  display: flex;
+  gap: 10px;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+/* Show mobile menu below 768px */
+@media (max-width: 768px) {
+  .desktop-menu {
+    display: none;
+  }
+  .mobile-menu {
+    display: block;
+  }
+}
+
+
+/** **/
+.mat-toolbar {
+  background-color: #1B3C88 !important; /* Persian Blue */
+  color: white;
+}
+
+.mat-button {
+  font-weight: bold;
+  color: white !important;
+}
+
+.brand {
+  font-size: 24px;
+  font-weight: 600;
+  color: #FFB703; /* Accent Yellow for brand */
+}

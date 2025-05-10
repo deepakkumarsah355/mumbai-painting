@@ -1,1 +1,65 @@
-<p>home works!</p>
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Bring Your Walls to Life</h1>
+    <p>Premium painting & design services for homes, offices, and commercial spaces.</p>
+    <button mat-raised-button color="accent">Book a Free Consultation</button>
+  </div>
+</section>
+
+<!-- Our Services -->
+<section class="section">
+  <h2 class="section-title">Our Services</h2>
+  <div class="card-grid">
+    <mat-card class="custom-card" *ngFor="let service of services">
+      <mat-card-header>
+        <mat-card-title>{{ service.title }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ service.description }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div style="text-align: center; margin-top: 3%;">
+  <button mat-raised-button color="primary">Explore More</button>
+</div>
+
+</section>
+
+<!-- Why Choose Us -->
+<section class="section alt-bg">
+  <h2 class="section-title">Why Choose Us</h2>
+  <div class="why-us-grid">
+    <div class="why-item" *ngFor="let point of whyPoints">
+      <mat-icon class="why-icon">check_circle</mat-icon>
+      <p>{{ point }}</p>
+    </div>
+  </div>
+</section>
+
+<!-- Recent Projects -->
+<section class="section">
+  <h2 class="section-title">Recent Projects</h2>
+  <div class="project-gallery">
+    <img *ngFor="let img of projectImages" [src]="img" alt="Project Image">
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section alt-bg">
+  <h2 class="section-title">What Our Clients Say</h2>
+  <div class="testimonial-grid">
+    <mat-card *ngFor="let t of testimonials" class="testimonial-card">
+      <mat-card-content>
+        <p>“{{ t.feedback }}”</p>
+        <small>- {{ t.name }}</small>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta-section">
+  <h2>Ready to Transform Your Space?</h2>
+  <button mat-flat-button color="accent">Get in Touch</button>
+</section>

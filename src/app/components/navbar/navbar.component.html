@@ -1,1 +1,28 @@
-<p>navbar works!</p>
+<mat-toolbar color="primary" class="mat-elevation-z4">
+  <!-- Brand -->
+  <span class="brand">Mumbai Painters</span>
+
+  <!-- Spacer pushes menu to the right -->
+  <span class="spacer"></span>
+
+  <!-- Desktop Menu -->
+  <nav class="menu desktop-menu">
+    <button mat-button>Home</button>
+    <button mat-button>Services</button>
+    <button mat-button>About</button>
+    <button mat-button>Contact</button>
+  </nav>
+
+  <!-- Mobile Hamburger -->
+  <div class="mobile-menu">
+    <button mat-icon-button [matMenuTriggerFor]="mobileMenu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #mobileMenu="matMenu">
+      <button mat-menu-item>Home</button>
+      <button mat-menu-item>Services</button>
+      <button mat-menu-item>About</button>
+      <button mat-menu-item>Contact</button>
+    </mat-menu>
+  </div>
+</mat-toolbar>
