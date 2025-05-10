@@ -7,11 +7,11 @@
   </div>
 </section>
 
-<!-- Our Services -->
-<section class="section">
+<section class="services-section">
   <h2 class="section-title">Our Services</h2>
   <div class="card-grid">
     <mat-card class="custom-card" *ngFor="let service of services">
+      <img mat-card-image [src]="service.image" alt="{{ service.title }}" />
       <mat-card-header>
         <mat-card-title>{{ service.title }}</mat-card-title>
       </mat-card-header>
@@ -21,21 +21,22 @@
     </mat-card>
   </div>
   <div style="text-align: center; margin-top: 3%;">
-  <button mat-raised-button color="primary">Explore More</button>
-</div>
-
+    <button mat-raised-button color="primary">Explore More</button>
+  </div>
 </section>
+
 
 <!-- Why Choose Us -->
 <section class="section alt-bg">
   <h2 class="section-title">Why Choose Us</h2>
   <div class="why-us-grid">
-    <div class="why-item" *ngFor="let point of whyPoints">
-      <mat-icon class="why-icon">check_circle</mat-icon>
-      <p>{{ point }}</p>
+    <div class="why-item" *ngFor="let point of whyPoints; let i = index">
+      <mat-icon class="why-icon">thumb_up</mat-icon> <!-- Changed icon -->
+      <p class="why-text">{{ point }}</p>
     </div>
   </div>
 </section>
+
 
 <!-- Recent Projects -->
 <section class="section">
@@ -46,7 +47,7 @@
 </section>
 
 <!-- Testimonials -->
-<section class="section alt-bg">
+<section class="section alt-bg" style="padding: 80px;">
   <h2 class="section-title">What Our Clients Say</h2>
   <div class="testimonial-grid">
     <mat-card *ngFor="let t of testimonials" class="testimonial-card">

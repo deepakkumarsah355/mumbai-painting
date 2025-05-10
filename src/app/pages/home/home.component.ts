@@ -7,17 +7,37 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
   services = [
-    { title: 'Interior Painting', description: 'Modern finishes and colors to brighten up your home.' },
-    { title: 'Exterior Painting', description: 'Durable and beautiful finishes to protect and impress.' },
-    { title: 'Texture & Design', description: 'Unique wall textures and artistic designs.' },
-    { title: 'Furniture Painting', description: 'Custom finishes for wood and metal furniture.' },
+    {
+      title: 'Interior Painting',
+      image: 'https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=800&q=80',
+      description: 'Beautiful, smooth finishes for every room. Customized to your mood, space, and décor.'
+    },
+    {
+  title: 'Exterior Painting',
+  image: 'https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=800&q=80',
+  description: 'Weather-resistant paints that enhance curb appeal and protect your home’s exterior.'
+}
+
+    ,
+    {
+      title: 'Wall Texturing',
+      image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80',
+      description: 'From stucco to artistic textures — add dimension and personality to your walls.'
+    },
+    {
+      title: 'Furniture Finishing',
+      image: 'https://images.unsplash.com/photo-1567016432779-094069958ea5?auto=format&fit=crop&w=800&q=80',
+      description: 'Give your old furniture a fresh, custom finish with our professional spray and brush techniques.'
+    }
   ];
 
-  whyPoints = [
-    'Trained & Verified Professionals',
-    'High-Quality Eco-Friendly Paints',
-    'On-Time Delivery',
-    'Affordable Pricing with Warranty'
+
+
+ whyPoints: string[] = [
+    "High-quality materials used for every project.",
+    "Experienced professionals with a passion for design.",
+    "Custom solutions tailored to your unique needs.",
+    "High-quality materials used for every project."
   ];
 
   testimonials = [
@@ -27,11 +47,11 @@ export class HomeComponent {
   ];
 
   projectImages = [
-  'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80', // Blue & white modern living room
-  'https://images.pexels.com/photos/4107280/pexels-photo-4107280.jpeg?auto=compress&cs=tinysrgb&w=800', // Man painting wall with roller
-  'https://images.pexels.com/photos/5691601/pexels-photo-5691601.jpeg?auto=compress&cs=tinysrgb&w=800', // Paint bucket & tools
-  'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800'  // Living room with vibrant walls
-];
+    'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80', // Blue & white modern living room
+    'https://images.pexels.com/photos/4107280/pexels-photo-4107280.jpeg?auto=compress&cs=tinysrgb&w=800', // Man painting wall with roller
+    'https://images.pexels.com/photos/5691601/pexels-photo-5691601.jpeg?auto=compress&cs=tinysrgb&w=800', // Paint bucket & tools
+    'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800'  // Living room with vibrant walls
+  ];
 
 
 }

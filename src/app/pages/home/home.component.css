@@ -85,23 +85,58 @@
 /* Why Us */
 .why-us-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
-  max-width: 800px;
-  margin: auto;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grid with 3 items max */
+  gap: 30px;
+  max-width: 900px; /* Adjusted for 3 items */
+  margin: 0 auto; /* Center the grid */
+  padding: 40px 20px;
 }
 
 .why-item {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.why-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 .why-icon {
-  color: #FFB703;
-  font-size: 30px;
-  margin-bottom: 10px;
+  color: #FFB703; /* Yellow color */
+  font-size: 40px;
+  transition: color 0.3s;
+}
+
+.why-item:hover .why-icon {
+  color: #fb8c00;
+}
+
+.why-text {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.alt-bg {
+  background-color: #f5f5f5;
+  padding: 60px 0;
 }
 
 /* Projects */
@@ -143,23 +178,53 @@
 }
 
 .services-section {
-  padding: 120px 20px;
+  padding: 40px 20px;
   background-color: #fdfdfd;
   text-align: center;
 }
 
-.services-section .section-title {
-  font-size: 28px;
+.section-title {
+  font-size: 32px;
   color: #1B3C88;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .card-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 24px;
 }
+
+.custom-card {
+  width: 280px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.custom-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.custom-card img {
+  height: 180px;
+  object-fit: cover;
+}
+
+.custom-card mat-card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1B3C88;
+}
+
+.custom-card mat-card-content {
+  font-size: 14px;
+  color: #444;
+}
+
 
 .custom-card {
   width: 260px;
