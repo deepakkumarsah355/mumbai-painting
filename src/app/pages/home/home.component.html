@@ -3,9 +3,52 @@
   <div class="hero-content">
     <h1>Bring Your Walls to Life</h1>
     <p>Premium painting & design services for homes, offices, and commercial spaces.</p>
-    <button mat-raised-button color="accent">Book a Free Consultation</button>
+    <!-- <button mat-raised-button color="accent">Book a Free Consultation</button> -->
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="border-radius: 30px; margin-top: 20px;">
+  Book a Free Consultation
+</button>
   </div>
 </section>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <form>
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Consultation Form</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="nameInput" class="form-label">Name</label>
+            <input type="text" class="form-control" id="nameInput" required />
+          </div>
+
+          <div class="mb-3">
+            <label for="mobileInput" class="form-label">Mobile</label>
+            <input type="tel" class="form-control" id="mobileInput" required pattern="[0-9]{10}" />
+          </div>
+
+          <div class="mb-3">
+            <label for="descriptionInput" class="form-label">Description</label>
+            <textarea class="form-control" id="descriptionInput" rows="3" required></textarea>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary" (onclick)="submitMessage()">Submit</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
 
 <section class="services-section">
   <h2 class="section-title">Our Services</h2>
@@ -62,5 +105,5 @@
 <!-- Call to Action -->
 <section class="cta-section">
   <h2>Ready to Transform Your Space?</h2>
-  <button mat-flat-button color="accent">Get in Touch</button>
+  <button mat-flat-button color="accent" [routerLink]="'contact-us'">Get in Touch</button>
 </section>

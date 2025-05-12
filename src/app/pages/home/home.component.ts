@@ -53,6 +53,9 @@ export class HomeComponent {
     'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800'  // Living room with vibrant walls
   ];
 
+  submitMessage(){
+    alert('Thank you for your intrest. Our team will get back to you soon')
+  }
 
 }
 
