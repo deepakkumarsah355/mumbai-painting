@@ -1,16 +1,16 @@
 <mat-toolbar color="primary" class="mat-elevation-z4">
   <!-- Brand -->
-  <span class="brand">Mumbai Painters</span>
+  <span class="brand">Mumbai Painting</span>
 
   <!-- Spacer pushes menu to the right -->
   <span class="spacer"></span>
 
   <!-- Desktop Menu -->
   <nav class="menu desktop-menu">
-    <button mat-button>Home</button>
-    <button mat-button>Services</button>
-    <button mat-button>About</button>
-    <button mat-button>Contact</button>
+    <button mat-button routerLink="/">Home</button>
+    <button mat-button routerLink="/services">Services</button>
+    <button mat-button routerLink="/about-us">About</button>
+    <button mat-button routerLink="/contact-us">Contact</button>
   </nav>
 
   <!-- Mobile Hamburger -->
@@ -19,10 +19,10 @@
       <mat-icon>menu</mat-icon>
     </button>
     <mat-menu #mobileMenu="matMenu">
-      <button mat-menu-item>Home</button>
-      <button mat-menu-item>Services</button>
-      <button mat-menu-item>About</button>
-      <button mat-menu-item>Contact</button>
+      <button mat-menu-item routerLink="/">Home</button>
+      <button mat-menu-item routerLink="/services">Services</button>
+      <button mat-menu-item routerLink="/about-us">About</button>
+      <button mat-menu-item routerLink="/contact-us">Contact</button>
     </mat-menu>
   </div>
 </mat-toolbar>
