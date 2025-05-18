@@ -1,1 +1,124 @@
-<app-under-construction></app-under-construction>
+<!-- About Hero Section -->
+<section class="about-hero d-flex align-items-center text-white text-center">
+  <div class="container">
+    <h1 class="display-4 fw-bold mb-3">Contact Us</h1>
+    <p class="lead mb-0">Delivering Excellence in Design, Painting & Furniture Services Since 2010.</p>
+  </div>
+</section>
+<section class="container py-5">
+
+  <div class="row g-4">
+    <!-- Contact Form Card -->
+    <div class="col-md-7 col-lg-6">
+      <mat-card class="p-4 shadow-sm">
+        <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+          <div class="mb-3">
+            <label for="name" class="form-label" style="color: #1B3C88;">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              name="name"
+              placeholder="Your name"
+              required
+              minlength="3"
+              ngModel
+              #name="ngModel"
+            />
+            <div class="text-danger small" *ngIf="name.invalid && name.touched">
+              Please enter at least 3 characters.
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label" style="color: #1B3C88;">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="name@example.com"
+              required
+              email
+              ngModel
+              #email="ngModel"
+            />
+            <div class="text-danger small" *ngIf="email.invalid && email.touched">
+              Please enter a valid email.
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="message" class="form-label" style="color: #1B3C88;">Message</label>
+            <textarea
+              class="form-control"
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Write your message here..."
+              required
+              minlength="10"
+              ngModel
+              #message="ngModel"
+            ></textarea>
+            <div class="text-danger small" *ngIf="message.invalid && message.touched">
+              Message must be at least 10 characters.
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            class="btn"
+            style="background-color: #FFB703; color: white;"
+            [disabled]="contactForm.invalid"
+          >
+            Send Message
+          </button>
+        </form>
+      </mat-card>
+    </div>
+
+    <!-- Contact Details Card -->
+    <div class="col-md-5 col-lg-6">
+      <mat-card class="p-4 shadow-sm">
+        <h4 style="color: #1B3C88;">Get in Touch</h4>
+        <p>
+          <strong>Address:</strong><br />
+          123 Mumbai Street,<br />
+          Mumbai, Maharashtra, India
+        </p>
+        <p>
+          <strong>Phone:</strong><br />
+          +91 9508320030, 8797681136, 9939377229
+        </p>
+        <p>
+          <strong>Email:</strong><br />
+          contactatmumbaipainting.com 
+        </p>
+
+        <h5 class="mt-4" style="color: #1B3C88;">Follow Us</h5>
+        <a href="#" class="me-3" style="color: #FFB703; font-size: 1.5rem;">
+          <i class="bi bi-facebook"></i>
+        </a>
+        <a href="#" class="me-3" style="color: #FFB703; font-size: 1.5rem;">
+          <i class="bi bi-twitter"></i>
+        </a>
+        <a href="#" class="me-3" style="color: #FFB703; font-size: 1.5rem;">
+          <i class="bi bi-instagram"></i>
+        </a>
+
+        <div class="ratio ratio-16x9 rounded shadow-sm mt-4">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60297.31606662293!2d72.80351066070147!3d19.08219783812896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce3c9b1f5d9b%3A0xdab2c74f76521e64!2sMumbai%2C%20Maharashtra%2C%20India!5e0!3m2!1sen!2sus!4v1687877777777!5m2!1sen!2sus"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mumbai Location"
+          ></iframe>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</section>
+
