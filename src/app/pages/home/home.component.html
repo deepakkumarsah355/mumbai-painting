@@ -16,7 +16,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
 
-      <form>
+      <form (ngSubmit)="submitMessage()" #consultationForm="ngForm">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Consultation Form</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -40,8 +40,8 @@
         </div>
 
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary" (onclick)="submitMessage()">Submit</button>
+          <button type="button" class="btn custom-button  btn-danger" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary custom-button" (onclick)="submitMessage()">Submit</button>
         </div>
       </form>
 

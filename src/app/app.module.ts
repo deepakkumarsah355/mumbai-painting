@@ -19,6 +19,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { PricingComponent } from './pages/pricing/pricing.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { LoginComponent } from './components/login/login.component';
+
 
 
 
@@ -33,7 +39,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     AboutUsComponent,
     ServicesComponent,
     PortfolioComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    PricingComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +52,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatIconModule,
     FormsModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule
   ],
   providers: [
     provideAnimationsAsync()

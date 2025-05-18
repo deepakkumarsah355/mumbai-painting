@@ -13,10 +13,10 @@ export class HomeComponent {
       description: 'Beautiful, smooth finishes for every room. Customized to your mood, space, and décor.'
     },
     {
-  title: 'Exterior Painting',
-  image: 'https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=800&q=80',
-  description: 'Weather-resistant paints that enhance curb appeal and protect your home’s exterior.'
-}
+      title: 'Exterior Painting',
+      image: 'https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=800&q=80',
+      description: 'Weather-resistant paints that enhance curb appeal and protect your home’s exterior.'
+    }
 
     ,
     {
@@ -33,7 +33,7 @@ export class HomeComponent {
 
 
 
- whyPoints: string[] = [
+  whyPoints: string[] = [
     "High-quality materials used for every project.",
     "Experienced professionals with a passion for design.",
     "Custom solutions tailored to your unique needs.",
@@ -53,8 +53,8 @@ export class HomeComponent {
     'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800'  // Living room with vibrant walls
   ];
 
-  submitMessage(){
-    alert('Thank you for your intrest. Our team will get back to you soon')
+  submitMessage() {
+    alert('Thank you for reaching out! Our team will contact you shortly.');
   }
 
 }

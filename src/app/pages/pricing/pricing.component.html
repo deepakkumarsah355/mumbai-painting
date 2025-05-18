@@ -1,0 +1,107 @@
+<div class="container-fluid" style="margin-top: 7%; margin-bottom: 3%;">
+  <div class="row g-4 d-flex">
+    
+    <!-- Left Card -->
+    <div class="col-lg-5 d-flex">
+      <mat-card class="w-100 h-100 shadow" style="background-color: #fef9f1;">
+        <div class="card-body d-flex flex-column justify-content-between">
+          <div>
+            <h4 class="text-primary" style="color: #1B3C88;">Why Choose Us?</h4>
+            <p>
+              We bring quality and trust to every wall. With top paint brands and clear pricing,
+              you're always in control. Select a plan, pick a brand, and get a fair estimate instantly.
+            </p>
+            <ul class="text-muted">
+              <li>✔ Trusted Brands: Asian Paints, Nerolac, Opus, Burger</li>
+              <li>✔ Transparent Pricing by Area</li>
+              <li>✔ Instant Downloadable Invoice</li>
+            </ul>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+
+    <!-- Right Card -->
+    <div class="col-lg-7 d-flex">
+      <mat-card class="w-100 h-100 shadow p-4" style="background-color: #1B3C88; color: white;">
+        <h3 class="text-center mb-4" style="color: #FFB703;">🎯 Pricing Calculator</h3>
+
+        <form class="d-flex flex-column justify-content-between h-100">
+          <div>
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <mat-form-field appearance="fill" class="w-100">
+                  <mat-label>Plan Type</mat-label>
+                  <mat-select [(ngModel)]="selectedPlan" name="plan">
+                    <mat-option *ngFor="let plan of plans" [value]="plan">{{ plan }}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field appearance="fill" class="w-100">
+                  <mat-label>Paint Brand</mat-label>
+                  <mat-select [(ngModel)]="selectedBrand" name="brand">
+                    <mat-option *ngFor="let brand of brands" [value]="brand">{{ brand }}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <mat-form-field appearance="fill" class="w-100">
+                  <mat-label>Material</mat-label>
+                  <mat-select [(ngModel)]="selectedRate" name="material" (selectionChange)="updateRate()">
+                    <mat-option *ngFor="let material of materials" [value]="material.rate">
+                      {{ material.name }} - ₹{{ material.rate }}/sq.ft
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field appearance="fill" class="w-100">
+                  <mat-label>Rate</mat-label>
+                  <input matInput type="number" [value]="selectedRate" readonly>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <mat-form-field appearance="fill" class="w-100">
+                  <mat-label>Length (ft)</mat-label>
+                  <input matInput type="number" [(ngModel)]="length" name="length">
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field appearance="fill" class="w-100">
+                  <mat-label>Breadth (ft)</mat-label>
+                  <input matInput type="number" [(ngModel)]="breadth" name="breadth">
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+
+          <!-- Buttons -->
+          <div class="mt-4 d-grid gap-2">
+            <button mat-raised-button color="accent" class="w-100"
+              style="background-color: #FFB703; color: #1B3C88;" (click)="calculateTotal()">
+              💰 Calculate Total
+            </button>
+
+            <button mat-raised-button class="w-100"
+              style="background-color: white; color: #1B3C88; border: 1px solid #FFB703;"
+              (click)="downloadInvoice()">
+              🧾 Download Invoice
+            </button>
+          </div>
+
+          <div class="mt-4 text-center" style="font-size: 1.2rem;">
+            Total: <strong>₹{{ total | number: '1.2-2' }}</strong>
+          </div>
+        </form>
+      </mat-card>
+    </div>
+
+  </div>
+</div>
