@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import emailjs from 'emailjs-com';
+
 
 @Component({
   selector: 'app-home',
@@ -6,6 +9,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+
+   consultationData = {
+    name: '',
+    mobile: '',
+    description: ''
+  };
+
   services = [
     {
       title: 'Interior Painting',
@@ -53,10 +63,24 @@ export class HomeComponent {
     'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800'  // Living room with vibrant walls
   ];
 
+  // Function to handle form submission
+  // Function to handle form submission
   submitMessage() {
-    alert('Thank you for reaching out! Our team will contact you shortly.');
+    console.log(this.consultationData)
+    emailjs.send(
+      'service_fwrmoyj',       // Your EmailJS Service ID
+      'template_np3r8vl',      // Your EmailJS Template ID
+      this.consultationData,
+      '5_VB4VLmcG_30keRL'       // Your EmailJS Public Key
+    ).then(() => {
+      alert('Thank you! We got your data.');
+      window.location.reload();
+    }).catch((err) => {
+      console.error('Email sending error:', err);
+      window.location.reload();
+      alert('Error sending message. Please try again.');
+    });
   }
-
 }
 
 

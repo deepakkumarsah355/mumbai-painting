@@ -10,7 +10,6 @@
 </button>
   </div>
 </section>
-
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -25,30 +24,29 @@
         <div class="modal-body">
           <div class="mb-3">
             <label for="nameInput" class="form-label">Name</label>
-            <input type="text" class="form-control" id="nameInput" required />
+            <input type="text" class="form-control" id="nameInput" required [(ngModel)]="consultationData.name" name="name" #name="ngModel" />
           </div>
 
           <div class="mb-3">
             <label for="mobileInput" class="form-label">Mobile</label>
-            <input type="tel" class="form-control" id="mobileInput" required pattern="[0-9]{10}" />
+            <input type="tel" class="form-control" id="mobileInput" required pattern="[0-9]{10}" [(ngModel)]="consultationData.mobile" name="mobile" #mobile="ngModel" />
           </div>
 
           <div class="mb-3">
-            <label for="descriptionInput" class="form-label">Description</label>
-            <textarea class="form-control" id="descriptionInput" rows="3" required></textarea>
+            <label for="descriptionInput" class="form-label">Address</label>
+            <textarea class="form-control" id="descriptionInput" rows="3" required [(ngModel)]="consultationData.description" name="description" #description="ngModel"></textarea>
           </div>
         </div>
 
         <div class="modal-footer">
-          <button type="button" class="btn custom-button  btn-danger" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary custom-button" (onclick)="submitMessage()">Submit</button>
+          <button type="button" class="btn custom-button btn-danger" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary custom-button" [disabled]="consultationForm.invalid">Submit</button>
         </div>
       </form>
 
     </div>
   </div>
 </div>
-
 
 <section class="services-section">
   <h2 class="section-title">Our Services</h2>
