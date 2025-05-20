@@ -18,7 +18,7 @@ export class HomeComponent {
 
   services = [
     {
-      title: 'Interior Painting',
+      title: 'Interior Painting & Wallpaper design',
       image: 'https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=800&q=80',
       description: 'Beautiful, smooth finishes for every room. Customized to your mood, space, and décor.'
     },
@@ -27,7 +27,6 @@ export class HomeComponent {
       image: 'https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=800&q=80',
       description: 'Weather-resistant paints that enhance curb appeal and protect your home’s exterior.'
     }
-
     ,
     {
       title: 'Wall Texturing',
