@@ -1,6 +1,5 @@
 <div class="container-fluid" style="margin-top: 7%; margin-bottom: 3%;">
   <div class="row g-4 d-flex">
-    
     <!-- Left Card -->
     <div class="col-lg-5 d-flex">
       <mat-card class="w-100 h-100 shadow" style="background-color: #fef9f1;">
@@ -50,6 +49,14 @@
             <div class="row g-3 mb-3">
               <div class="col-md-6">
                 <mat-form-field appearance="fill" class="w-100">
+                  <mat-label>Surface Type</mat-label>
+                  <mat-select [(ngModel)]="selectedSurface" name="surface">
+                    <mat-option *ngFor="let surface of surfaceTypes" [value]="surface.name">{{ surface.name }}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field appearance="fill" class="w-100">
                   <mat-label>Material</mat-label>
                   <mat-select [(ngModel)]="selectedRate" name="material" (selectionChange)="updateRate()">
                     <mat-option *ngFor="let material of materials" [value]="material.rate">
@@ -58,25 +65,42 @@
                   </mat-select>
                 </mat-form-field>
               </div>
+            </div>
+
+            <div class="row g-3 mb-3">
               <div class="col-md-6">
                 <mat-form-field appearance="fill" class="w-100">
                   <mat-label>Rate</mat-label>
                   <input matInput type="number" [value]="selectedRate" readonly>
                 </mat-form-field>
               </div>
+              <div class="col-md-6">
+                <div class="row g-2">
+                  <div class="col-6">
+                    <mat-form-field appearance="fill" class="w-100">
+                      <mat-label>Length (ft)</mat-label>
+                      <input matInput type="number" [(ngModel)]="length" name="length">
+                    </mat-form-field>
+                  </div>
+                  <div class="col-6">
+                    <mat-form-field appearance="fill" class="w-100">
+                      <mat-label>Breadth (ft)</mat-label>
+                      <input matInput type="number" [(ngModel)]="breadth" name="breadth">
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div class="row g-3 mb-3">
               <div class="col-md-6">
                 <mat-form-field appearance="fill" class="w-100">
-                  <mat-label>Length (ft)</mat-label>
-                  <input matInput type="number" [(ngModel)]="length" name="length">
-                </mat-form-field>
-              </div>
-              <div class="col-md-6">
-                <mat-form-field appearance="fill" class="w-100">
-                  <mat-label>Breadth (ft)</mat-label>
-                  <input matInput type="number" [(ngModel)]="breadth" name="breadth">
+                  <mat-label>Apply Coupon</mat-label>
+                  <mat-select [(ngModel)]="selectedCoupon" name="coupon" (selectionChange)="applyCoupon()">
+                    <mat-option *ngFor="let coupon of coupons" [value]="coupon.name">
+                      {{ coupon.name }} - {{ coupon.discount }}% OFF
+                    </mat-option>
+                  </mat-select>
                 </mat-form-field>
               </div>
             </div>
@@ -97,11 +121,16 @@
           </div>
 
           <div class="mt-4 text-center" style="font-size: 1.2rem;">
-            Total: <strong>₹{{ total | number: '1.2-2' }}</strong>
+            <ng-container *ngIf="discount > 0">
+              <div>Total: <span style="text-decoration: line-through;">₹{{ total | number:'1.2-2' }}</span></div>
+              <div>Discounted Price: <strong>₹{{ discountedTotal | number:'1.2-2' }}</strong></div>
+            </ng-container>
+            <ng-container *ngIf="discount === 0">
+              Total: <strong>₹{{ total | number:'1.2-2' }}</strong>
+            </ng-container>
           </div>
         </form>
       </mat-card>
     </div>
-
   </div>
 </div>
